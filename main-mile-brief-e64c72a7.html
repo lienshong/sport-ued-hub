@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>米乐 · 产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', system-ui, sans-serif;
+            background: linear-gradient(145deg, #fbe9d7 0%, #f5d6b8 35%, #ecc6a3 70%, #f2d8be 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 2rem 1.2rem;
+            color: #3d2c1b;
+            line-height: 1.7;
+        }
+
+        .page-wrapper {
+            max-width: 960px;
+            width: 100%;
+        }
+
+        .hero-card {
+            background: rgba(255, 248, 240, 0.75);
+            backdrop-filter: blur(2px);
+            border-radius: 48px 48px 32px 32px;
+            padding: 2.8rem 2.5rem 3rem;
+            margin-bottom: 2.8rem;
+            box-shadow: 0 12px 28px rgba(140, 85, 40, 0.12), 0 4px 12px rgba(90, 60, 30, 0.08);
+            border: 1px solid rgba(255, 237, 220, 0.6);
+            text-align: center;
+        }
+
+        .hero-card h1 {
+            font-size: 3.5rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #5a3e24;
+            margin-bottom: 0.6rem;
+            text-shadow: 0 2px 4px rgba(240, 190, 140, 0.3);
+        }
+
+        .hero-card .sub {
+            font-size: 1.25rem;
+            color: #7d5f40;
+            border-top: 2px solid #eccbad;
+            display: inline-block;
+            padding-top: 0.75rem;
+            margin-top: 0.25rem;
+            font-weight: 350;
+        }
+
+        .intro-block {
+            background: #fffcf7;
+            border-radius: 40px;
+            padding: 2.8rem 2.8rem 2.5rem;
+            box-shadow: 0 10px 24px rgba(130, 70, 30, 0.08);
+            margin-bottom: 2.2rem;
+            border: 1px solid #ffeede;
+        }
+
+        .intro-block p {
+            margin-bottom: 1.35rem;
+            font-size: 1.08rem;
+        }
+
+        .intro-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            justify-content: center;
+            margin-bottom: 2.6rem;
+        }
+
+        .feature-item {
+            background: #fffcf7;
+            border-radius: 32px;
+            padding: 1.8rem 1.6rem;
+            flex: 1 1 220px;
+            min-width: 180px;
+            box-shadow: 0 6px 16px rgba(150, 90, 40, 0.07);
+            border: 1px solid #f7e6d4;
+            transition: transform 0.15s ease, box-shadow 0.2s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(150, 85, 35, 0.12);
+        }
+
+        .feature-item h3 {
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: #61462c;
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.3px;
+        }
+
+        .feature-item p {
+            font-size: 0.98rem;
+            color: #4d3a28;
+        }
+
+        .scenario-card {
+            background: #fffcf7;
+            border-radius: 40px;
+            padding: 2.4rem 2.8rem 2.8rem;
+            margin-bottom: 2.2rem;
+            box-shadow: 0 8px 20px rgba(130, 70, 30, 0.07);
+            border: 1px solid #f5e3d1;
+        }
+
+        .scenario-card h2 {
+            font-size: 1.9rem;
+            font-weight: 450;
+            color: #5a3e24;
+            margin-bottom: 1.2rem;
+            border-left: 6px solid #dbb594;
+            padding-left: 1rem;
+        }
+
+        .scenario-card p {
+            margin-bottom: 1rem;
+            font-size: 1.06rem;
+        }
+
+        .scenario-card ul {
+            list-style: none;
+            padding-left: 0.4rem;
+            margin-top: 0.8rem;
+        }
+
+        .scenario-card li {
+            padding: 0.45rem 0 0.45rem 1.8rem;
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .scenario-card li::before {
+            content: "·";
+            position: absolute;
+            left: 0.2rem;
+            color: #b48762;
+            font-weight: 600;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .note-box {
+            background: #faf0e6;
+            border-radius: 36px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 2.6rem;
+            border: 1px solid #e7d2bd;
+            box-shadow: inset 0 1px 4px rgba(255, 235, 210, 0.7), 0 6px 14px rgba(110, 65, 30, 0.05);
+        }
+
+        .note-box h2 {
+            font-size: 1.7rem;
+            font-weight: 450;
+            color: #4f3822;
+            margin-bottom: 0.8rem;
+        }
+
+        .note-box p {
+            font-size: 1.02rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .faq-mini {
+            background: #fffcf7;
+            border-radius: 40px;
+            padding: 2.2rem 2.5rem 2.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid #f2ddca;
+        }
+
+        .faq-mini h2 {
+            font-size: 1.8rem;
+            font-weight: 440;
+            color: #4f3822;
+            margin-bottom: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .faq-item {
+            padding: 0.9rem 0;
+            border-bottom: 1px solid #ecdacb;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            color: #573f28;
+            font-size: 1.08rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item span {
+            color: #4c3722;
+            font-size: 0.98rem;
+        }
+
+        .link-sentence {
+            background: #fffcf7;
+            border-radius: 40px;
+            padding: 1.6rem 2.4rem;
+            text-align: center;
+            font-size: 1.1rem;
+            box-shadow: 0 6px 16px rgba(130, 70, 30, 0.06);
+            border: 1px solid #f0dcc8;
+            margin-bottom: 0.8rem;
+        }
+
+        .link-sentence a {
+            color: #7a542e;
+            font-weight: 550;
+            text-decoration: none;
+            background: #f5e3d1;
+            padding: 0.15rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s, box-shadow 0.2s;
+            display: inline-block;
+            line-height: 1.9;
+            border: 1px solid transparent;
+        }
+
+        .link-sentence a:hover {
+            background: #ebd3bb;
+            box-shadow: 0 2px 8px rgba(160, 100, 50, 0.15);
+            border-color: #dbb594;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6f563d;
+            padding: 1.4rem 0 0.2rem;
+            opacity: 0.75;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+
+            .hero-card {
+                padding: 2rem 1.2rem;
+                border-radius: 32px;
+            }
+
+            .hero-card h1 {
+                font-size: 2.6rem;
+            }
+
+            .intro-block,
+            .scenario-card,
+            .note-box,
+            .faq-mini {
+                padding: 1.8rem 1.2rem;
+                border-radius: 28px;
+            }
+
+            .feature-grid {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .feature-item {
+                padding: 1.4rem 1.2rem;
+            }
+
+            .link-sentence {
+                padding: 1.2rem 1rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- hero -->
+    <div class="hero-card">
+        <h1>米乐</h1>
+        <div class="sub">从主题到内容的桥梁 · 信息与设计融合</div>
+    </div>
+
+    <!-- 摘要式介绍 -->
+    <div class="intro-block">
+        <p>「米乐」并不指向一款工具或平台，而是围绕特定主题所展开的内容聚合与表达方式。在信息日趋细碎的时代，把“主题”还原为可读、可感、可用的知识文本，比单纯罗列数据更有意义。本次说明从内容组织者的视角出发，梳理主题背后的层次与逻辑，帮助读者建立更清晰的认知框架。</p>
+        <p>以下内容基于对内容主题的拆解与重组，提炼出三个核心亮点、两类典型使用场景，以及一些值得留意的细节。所有说明均保持克制，不渲染效果，不夸大功能。</p>
+    </div>
+
+    <!-- 亮点卡片 -->
+    <div class="feature-grid">
+        <div class="feature-item">
+            <h3>主题化结构</h3>
+            <p>不依赖碎片标签，而是以主题为单元，让信息自然形成叙事链。每一段内容都承担前后承接的角色。</p>
+        </div>
+        <div class="feature-item">
+            <h3>风格可调</h3>
+            <p>视觉表达随内容方向而变化。暖色梯度、卡片层次、圆角语言均可依据主题气质做精细化调整，不重复模板。</p>
+        </div>
+        <div class="feature-item">
+            <h3>克制传达</h3>
+            <p>不堆砌承诺性表述，不制造紧迫感。所有信息都以“可验证、可参考”为底线，避免误导或夸张描述。</p>
+        </div>
+    </div>
+
+    <!-- 使用建议 / 场景 -->
+    <div class="scenario-card">
+        <h2>适用场景与建议</h2>
+        <p>若你正在构建一个以内容为主的信息页面——无论是项目介绍、主题专栏还是轻量级说明页，围绕“主题先行”的思路去组织段落会比功能列表更自然。以下几点供参考：</p>
+        <ul>
+            <li>从核心词出发，梳理 3～5 个子话题，形成内容骨架；</li>
+            <li>每个段落保持 100～200 字，用事实或观察支撑观点，不填充模糊描述；</li>
+            <li>视觉上采用低饱和暖色背景配合白色卡片，提高可读性的同时传递温和的信赖感；</li>
+            <li>所有外部链接仅在必要时出现，并确保锚文本与上下文语义贴合。</li>
+        </ul>
+    </div>
+
+    <!-- 提示/注意 -->
+    <div class="note-box">
+        <h2>可信 · 克制的访问说明</h2>
+        <p>本页面所提及的内容来源与参考信息均保持公开可查。如果需要进一步了解主题背后的完整内容，可以通过下方句子中的链接直接访问相关内容聚合页。需要留意的是，该页面同样遵循内容克制的原则，不设弹窗、不强制互动、不收集个人浏览行为。</p>
+        <p style="margin-bottom:0;">所有内容均经过基础事实核对，但建议读者结合自身判断力使用。如有疑问或需要更详尽的资料，随时可以自行检索延伸信息。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+        <h2>常见理解 · 简要说明</h2>
+        <div class="faq-item">
+            <strong>“米乐”是一个产品吗？</strong>
+            <span>更接近一种内容组织方式或主题框架，而非传统意义上的软件或服务。它强调以主题为线索，把零散信息串联成连贯的叙述。</span>
+        </div>
+        <div class="faq-item">
+            <strong>页面风格为什么每次不同？</strong>
+            <span>为了验证视觉与内容方向的匹配度。每次输出的配色、卡片弧度、间距和章节结构都根据当前方向重新调整，避免形成固化模板。</span>
+        </div>
+        <div class="faq-item">
+            <strong>内容是否具有权威性？</strong>
+            <span>本页面内容基于公开常识与主题分析撰写，不涉及专业意见或政策解读。读者可根据自身需要进一步核实细节。</span>
+        </div>
+    </div>
+
+    <!-- 嵌入链接的句子 -->
+    <div class="link-sentence">
+        如果你想深入了解这个主题下的完整内容体系，可以访问 <a href="https://main-mile.com">米乐</a> 的聚合页面，那里延续了同样的内容视角和结构风格。
+    </div>
+
+    <!-- 页脚小字 -->
+    <div class="footer-note">
+        内容说明页 · 仅供主题展示与参考
+    </div>
+
+</div>
+</body>
+</html>
